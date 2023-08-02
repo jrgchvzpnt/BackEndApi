@@ -31,7 +31,7 @@ namespace BackEndApi.Utilidades
                     opt => opt.Ignore()
                 )
                 .ForMember(destino => destino.FechaRegistro,
-                    opt => opt.MapFrom(origen => DateTime.ParseExact(origen.FechaRegistro, "yy/MM/yyyy", 
+                    opt => opt.MapFrom(origen => DateTime.ParseExact(origen.FechaRegistro, "dd/MM/yyyy", 
                     CultureInfo.InvariantCulture))
                 );
 

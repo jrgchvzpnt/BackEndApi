@@ -21,11 +21,7 @@ namespace BackEndApi.Services.Implementacion
                lista = await _dbContext.Productos.Include(opt => opt.TipoProducto).ToListAsync();
                 return lista;
 
-                /*
-                List<Producto> lista = new List<Producto>();
-                lista = await _dbContext.Productos.ToListAsync();
-                return lista;
-                */
+               
             }
 
             catch (Exception ex)
@@ -38,7 +34,7 @@ namespace BackEndApi.Services.Implementacion
             try
             {
                 Producto? encontrado = new Producto();
-                encontrado = await _dbContext.Productos.Include(dpt => dpt.TipoProductoId)
+                encontrado = await _dbContext.Productos.Include(dpt => dpt.TipoProducto)
                     .Where(p => p.Id == idproducto).FirstOrDefaultAsync();
                 return encontrado;
             }
